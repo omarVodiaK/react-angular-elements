@@ -20,11 +20,16 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
+				<sebng-tooltip
+					content="this is a tooltip"
+					trigger="click"
+				></sebng-tooltip>
 				{/* <sebng-tooltip>Tooltip Reference in ng-content</sebng-tooltip> */}
 				<button onClick={openModal}>open modal</button>
 				<img src={logo} className="App-logo" alt="logo" />
 			</header>
-			<modal-component
+
+			<sebng-modal
 				id="modal"
 				centered={true}
 				toggle={toggle}
@@ -35,7 +40,7 @@ function App() {
 				<div footer="">
 					<button onClick={closeModal}>close modal</button>
 				</div>
-			</modal-component>
+			</sebng-modal>
 		</div>
 	)
 }
