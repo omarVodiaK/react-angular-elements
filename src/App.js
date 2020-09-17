@@ -3,18 +3,28 @@ import logo from './logo.svg'
 import './App.scss'
 
 function App() {
-	const [toggle, setToggle] = useState()
+	const [toggle, setToggle] = useState({
+		angular: undefined,
+		svelte: undefined,
+	})
 	const modalRef = React.createRef()
+	const sveltModalRef = React.createRef()
 
 	useEffect(() => {
-		modalRef.current.addEventListener('dismiss', () => setToggle(undefined))
+		sveltModalRef.current.addEventListener('dismiss', () => closeModal())
+		modalRef.current.addEventListener('dismiss', () => closeModal())
 	})
-	const openModal = () => {
-		setToggle(true)
+	const openModal = modal => {
+		setToggle({
+			[modal]: true,
+		})
 	}
 
 	const closeModal = () => {
-		setToggle(undefined)
+		setToggle({
+			angular: undefined,
+			svelte: undefined,
+		})
 	}
 
 	return (
@@ -25,18 +35,35 @@ function App() {
 					trigger="click"
 				></sebng-tooltip>
 				{/* <sebng-tooltip>Tooltip Reference in ng-content</sebng-tooltip> */}
-				<button onClick={openModal}>open modal</button>
+				<button onClick={() => openModal('svelte')}>
+					open Svelt modal
+				</button>
+				<button onClick={() => openModal('angular')}>
+					open angular modal
+				</button>
 				<img src={logo} className="App-logo" alt="logo" />
 			</header>
+
+			<svelte-modal
+				toggle={toggle.svelte}
+				centered={true}
+				ref={sveltModalRef}
+			>
+				<div slot="header">
+					<h1>Im Svelte</h1>
+				</div>
+				<div slot="body">Look Closer</div>
+				<div slot="footer">Footer</div>
+			</svelte-modal>
 
 			<sebng-modal
 				id="modal"
 				centered={true}
-				toggle={toggle}
+				toggle={toggle.angular}
 				ref={modalRef}
 			>
-				<h1 header="">header</h1>
-				<p body="">Modal Body</p>
+				<h1 header="">I'm Angular</h1>
+				<p body="">Look Closer</p>
 				<div footer="">
 					<button onClick={closeModal}>close modal</button>
 				</div>
