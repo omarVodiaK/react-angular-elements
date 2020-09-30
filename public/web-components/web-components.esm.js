@@ -1,0 +1,1 @@
+import{p as e,b as s}from"./p-0cf7d88f.js";(()=>{const s=import.meta.url,c={};return""!==s&&(c.resourcesUrl=new URL(".",s).href),e(c)})().then(e=>s([["p-97a78ec3",[[0,"seb-checkbox",{_id:[1],name:[1],disabled:[4],label:[1],checked:[4]}]]],["p-8601c416",[[4,"seb-modal",{backdropDismiss:[4,"backdrop-dismiss"],centered:[4],toggle:[4],size:[1]}]]]],e));

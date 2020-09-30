@@ -27,7 +27,7 @@
 		<title>React App</title>
 	</head>
 	<body>
-		<script src="zone.min.js"></script>
+		<!-- <script src="zone.min.js"></script> -->
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
 		<!--
@@ -40,8 +40,12 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-		<script src="my-modal.js"></script>
-		<script src="my-tooltip.js"></script>
+		<!-- <script src="my-modal.js"></script>
+		<script src="my-tooltip.js"></script> -->
 		<script src="bundle.js"></script>
+		<script
+			type="module"
+			src="./web-components/web-components.esm.js"
+		></script>
 	</body>
 </html>
