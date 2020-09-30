@@ -36,7 +36,8 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<CustomCheckbox
-					label={'this is a label'}
+					label={<div>This is a custom label</div>}
+					description={<a>This is a link description</a>}
 					id={'id'}
 					onChange={doSomething}
 				></CustomCheckbox>
@@ -46,6 +47,16 @@ function App() {
 					toggle={toggle}
 					backDropDismiss={true}
 					onDimiss={closeModal}
+					header={<h1>Im Stencil</h1>}
+					body={<p>Look Closer </p>}
+					footer={
+						<button
+							className="btn btn-primary"
+							onClick={() => closeModal()}
+						>
+							close
+						</button>
+					}
 				/>
 				<button onClick={() => openModal('svelte')}>
 					open Svelt modal
@@ -53,7 +64,7 @@ function App() {
 				<button onClick={() => openModal('angular')}>
 					open angular modal
 				</button>
-				<img src={logo} className="App-logo" alt="logo" />
+				<Logo />
 			</header>
 
 			{/* <svelte-checkbox></svelte-checkbox> */}
@@ -94,5 +105,7 @@ function App() {
 		</div>
 	)
 }
+
+const Logo = () => <img src={logo} className="App-logo" alt="logo" />
 
 export default App

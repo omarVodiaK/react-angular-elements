@@ -1,6 +1,13 @@
 import React, { useRef, useEffect } from 'react'
 
-const CustomCheckbox = ({ label, id, name, disabled, onChange }) => {
+const CustomCheckbox = ({
+	label,
+	description,
+	id,
+	name,
+	disabled,
+	onChange,
+}) => {
 	const elementRef = useRef(null)
 
 	useEffect(() => {
@@ -9,13 +16,17 @@ const CustomCheckbox = ({ label, id, name, disabled, onChange }) => {
 			console.log('here')
 			onChange()
 		})
+		console.log(description)
+		// elementRef.current.label = label
+		// elementRef.current.description = description
 	}, [])
 
 	return (
 		<seb-checkbox
 			ref={elementRef}
-			label={label}
 			_id={id}
+			label={label.props.children}
+			description={description.props.children}
 			name={name}
 			disabled={disabled}
 		></seb-checkbox>
