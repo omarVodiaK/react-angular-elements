@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CustomModal from './CustomModal'
 import CustomCheckbox from './CustomCheckbox'
+import CustomDatePicker from './CustomDatePicker'
 import logo from './logo.svg'
 import './App.scss'
 
@@ -41,7 +42,14 @@ function App() {
 					id={'id'}
 					onChange={doSomething}
 				></CustomCheckbox>
-
+				<CustomDatePicker
+					value={new Date()}
+					monthPicker={false}
+					forceCustom={true}
+					localeCode={'sv-SV'}
+					placeholder={'yyyy-mm-dd'}
+					disabled={false}
+				></CustomDatePicker>
 				<CustomModal
 					centered={true}
 					toggle={toggle}
