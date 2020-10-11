@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import logo from './logo.svg'
 import './App.scss'
 
-import { WebCheckbox, WebDatepicker, WebModal } from 'react-components'
+import { WebCheckbox, WebDatepicker, WebModal } from 'raw-react-components'
 
 function App() {
 	const modalRef = useRef(null)
