@@ -8,7 +8,9 @@
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
 		"node-sass": "^4.14.1",
+		"raw-components": "file:raw-components-0.0.1.tgz",
 		"react": "^16.13.1",
+		"react-components": "file:react-components-0.0.0.tgz",
 		"react-dom": "^16.13.1",
 		"react-scripts": "3.4.3"
 	},
